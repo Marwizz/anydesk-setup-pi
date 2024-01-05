@@ -1,0 +1,11 @@
+wget https://download.anydesk.com/rpi/anydesk_6.3.0-1_armhf.deb
+sudo dpkg -i anydesk_6.3.0-1_armhf.deb
+
+sudo apt install libgles-dev libegl-dev
+sudo apt --fix-broken install -y
+sudo ln -s /usr/lib/arm-linux-gnueabihf/libGLESv2.so /usr/lib/libbrcmGLESv2.so
+sudo ln -s /usr/lib/arm-linux-gnueabihf/libEGL.so /usr/lib/libbrcmEGL.so
+sudo apt install libpolkit-gobject-1-0:armhf -y
+
+sudo dpkg --add-architecture armhf
+sudo apt install libpolkit-gobject-1-0:armhf libraspberrypi0:armhf libraspberrypi-dev:armhf libraspberrypi-bin:armhf libgles-dev:armhf libegl-dev:armhf -y
